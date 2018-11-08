@@ -4,6 +4,8 @@ import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
@@ -12,7 +14,9 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.OutputType;
 
 
@@ -101,5 +105,38 @@ public class actiondriver {
 		action.moveToElement(element).build().perform();
 		driver.findElement(By.linkText(data2)).click();
 	}
-
+	public void wait(By locator, int time)
+	{
+		WebDriverWait wait=new WebDriverWait(driver, time);
+		WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+}
+	public void configData(String data) throws IOException
+	{
+	    Properties prop;
+		 prop = new Properties();
+		 FileInputStream ip = new FileInputStream("D:\\bala project\\Powertex\\configuration.properties");
+		 prop.load(ip);
+		  if(data.equals("url"))
+		 {
+			prop.getProperty("url");
+		 }
+		 else if(data.equals("username"))
+		 {
+			 prop.getProperty("username");
+		 }
+		 else if(data.equals("password"))
+		 {
+			 prop.getProperty("password");
+		 }
+	}
+	public void imWait(int data)
+	{
+		driver.manage().timeouts().implicitlyWait(data, TimeUnit.SECONDS);
+	}
+	public String getdata(By locator)
+	{
+		String data;
+		data=driver.findElement(locator).getText();
+		return data;
+	}
 }
