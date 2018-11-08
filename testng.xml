@@ -4,13 +4,13 @@
   <test name="firefox test">
   <parameter name="browser" value="firefox"></parameter>
     <classes>
-      <class name="scripts.addtocart"/>
+      <class name="scripts.homepageopration"/>
     </classes>
   </test> <!-- firefox -->
     <test name="chrome test">
     <parameter name="browser" value="chrome"></parameter>
     <classes>
-      <class name="scripts.homepageopration"/>
+      <class name="scripts.addtocart"/>
     </classes>
   </test> <!-- chrome -->
 </suite> <!-- Suite -->

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test thread-count="5" name="firefox test(failed)">
-    <parameter name="browser" value="firefox"/>
+  <test thread-count="5" name="chrome test(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="scripts.addtocart">
         <methods>
@@ -12,5 +12,5 @@
         </methods>
       </class> <!-- scripts.addtocart -->
     </classes>
-  </test> <!-- firefox test(failed) -->
+  </test> <!-- chrome test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

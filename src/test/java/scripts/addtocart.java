@@ -71,7 +71,7 @@ public class addtocart extends startbrowser
      aDriver.click(checkout.dealerSelect);
      //Thread.sleep(5000);
      WebDriverWait wait=new WebDriverWait(driver, 30);
-     wait.until(ExpectedConditions.elementToBeClickable(checkout.nextBtn));
+     wait.until(ExpectedConditions.visibilityOfElementLocated(checkout.nextBtn));
      aDriver.click(checkout.nextBtn);
      aDriver.click(checkout.reviewNxtBtn);
      aDriver.click(checkout.codBtn);
